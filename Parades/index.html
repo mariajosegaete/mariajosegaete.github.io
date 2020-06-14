@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>03 Parades - Model de Dades de la Infraestructura Tramviaria</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="..">Model de Dades de la Infraestructura Tramviaria</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obra Civil <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Domini_public/">01 Domini Public</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tracat/">02 Traçat</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">03 Parades</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Pavimentacio/">04 Pavimentació</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Reg/">05 Reg</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Drenatge/">06 Drenatge</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Enllumenat/">07 Enllumenat</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Tramviaris <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Catenaria/">08 Catenària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Multitubular/">09 Multitubular</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Energia/">10 Energia</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Subestacions/">11 Subestacions</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../SAE/">12 SAE</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_ferroviaria/">13 Senyalització ferroviària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Semaforitzacio/">14 Semaforització</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_viaria/">15 Senyalització viària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Videovigilancia/">16 Videovigilància</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tallers_i_cotxeres/">17 Tallers i Cotxeres</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Auxiliars <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Mobiliari_urba/">18 Mobiliari urbà</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Estructures_complementaries/">19 Estructures complementàries</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Tracat/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../Pavimentacio/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#03-parades">03 Parades</a></li>
+            <li class="second-level"><a href="#001-andanes">001 Andanes</a></li>
+                
+            <li class="second-level"><a href="#002-marquesines">002 Marquesines</a></li>
+                
+            <li class="second-level"><a href="#003-moble-tecnic">003 Moble tècnic</a></li>
+                
+            <li class="second-level"><a href="#004-quadre-electric">004 Quadre elèctric</a></li>
+                
+            <li class="second-level"><a href="#005-armari-de-telecomunicacions">005 Armari de telecomunicacions</a></li>
+                
+            <li class="second-level"><a href="#006-distribuidor-automatic-de-bitllets">006 Distribuïdor automàtic de bitllets</a></li>
+                
+            <li class="second-level"><a href="#007-siv">007 SIV</a></li>
+                
+            <li class="second-level"><a href="#008-sistema-dinterfonia">008 Sistema d'interfonia</a></li>
+                
+            <li class="second-level"><a href="#009-sistema-de-megafonia">009 Sistema de megafonia</a></li>
+                
+            <li class="second-level"><a href="#010-aparador">010 Aparador</a></li>
+                
+            <li class="second-level"><a href="#011-escala-mecanica">011 Escala mecànica</a></li>
+                
+            <li class="second-level"><a href="#012-ascensors">012 Ascensors</a></li>
+                
+            <li class="second-level"><a href="#013-baranes">013 Baranes</a></li>
+                
+            <li class="second-level"><a href="#014-papereres">014 Papereres</a></li>
+                
+            <li class="second-level"><a href="#015-bancs">015 Bancs</a></li>
+                
+            <li class="second-level"><a href="#015-noms-parades">015 Noms parades</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="03-parades">03 Parades</h2>
+<p><br/></p>
+<blockquote>
+<p>Grup: Obra Civil · Número elements: 16</p>
+</blockquote>
+<p><br/></p>
+<p>Lloc en què para el tramvia perquè puguin pujar-hi els passatgers o baixar-ne. Les parades del tramvia estan equipades amb la infraestructura i sistemes necessaris per al resguard, informació i comunicació a disposició dels viatgers.</p>
+<p><br/></p>
+<h3 id="001-andanes">001 Andanes</h3>
+<blockquote>
+<p><code>Identificador: 03001 | Codi: AND | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Zona de trànsit d’usuaris a la parada. Plataforma elevada que permet el fàcil accés dels viatgers al tramvia. S'hi inclouen les rampes d'accés.</p>
+<p><br/></p>
+<p><center><img alt="030011" src="../img/030011.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>AMPLADA</td>
+<td align="left">Determina en metres l'amplada de l'andana.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+<tr>
+<td>LONGITUD</td>
+<td align="left">Determina en metres la longitud de l'andana.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>PENDENT</td>
+<td align="left">Indica en % el pendent que té l'andana.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+<tr>
+<td>TIPUS</td>
+<td align="left">Fa referència a la tipologia d'andana. Aquesta pot ser central, lateral o en túnel. L'atribut ha de tenir un dels següents valors:<ul><li><strong>Central</strong>: Defineix la posició de l'Andana com a Central. <a href="../img/0300111.jpg"><strong>Veure</strong></a></li><li><strong>Lateral</strong>: Defineix la posició de l'Andana com a Lateral. <a href="../img/0300112.jpg"><strong>Veure</strong></a></li><li><strong>Coberta</strong>: Indica que l'andana està coberta (túnel, …) <a href="../img/0300113.jpg"><strong>Veure</strong></a></li></ul></td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030012" src="../img/030012.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-andanes
+Nom taula DB: atmgis_03_andanes
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.26', dasharray: 'continua', color: '#e02c07', fillcolor: '#fae0db', fillstyle: 'solid']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="002-marquesines">002 Marquesines</h3>
+<blockquote>
+<p><code>Identificador: 03002 | Codi: MAR | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Estructura metàl·lica per aixoplugar els usuaris. Coberta situada damunt l'andana per a oferir refugi als usuaris del sol, el vent o la pluja.</p>
+<p><br/></p>
+<p><center><img alt="030021" src="../img/030021.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>DOCUMENT_ASSOCIAT</td>
+<td align="left">Nom d'un o més documents associats amb plànols de diversos detalls de l'element en qüestió.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030022" src="../img/030022.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-marquesines
+Nom taula DB: atmgis_03_marquesines
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.35', dasharray: 'null', color: '#f78f7a', fillcolor: '#f78f7a', fillstyle: 'solid']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="003-moble-tecnic">003 Moble tècnic</h3>
+<blockquote>
+<p><code>Identificador: 03003 | Codi: MOB | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Element principal del cos de la parada. Es tracta de l'estructura que acull tots els sistemes de la parada (armari de telecomunicacions, aparadors, SIV, DAB, megafonia, interfonia i quadre elèctric).</p>
+<p><br/></p>
+<p><center><img alt="030031" src="../img/030031.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030032" src="../img/030032.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-moble tècnic
+Nom taula DB: atmgis_03_moble_tecnic
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.4', dasharray: 'continua', color: '#e02c07', fillcolor: '#e7a493', fillstyle: 'solid']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="004-quadre-electric">004 Quadre elèctric</h3>
+<blockquote>
+<p><code>Identificador: 03004 | Codi: QBT | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Quadre general de baixa tensió de la parada. Quadre elèctric de baixa tensió per a la gestió energètica del conjunt d'elements de la parada.</p>
+<p><br/></p>
+<p><center><img alt="030041" src="../img/030041.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CUP</td>
+<td align="left">Fa referència al número de contracte d’escomesa.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>POTENCIA</td>
+<td align="left">Indica la potència contractada del quadre elèctric.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ENCLAVAMENT</td>
+<td align="left">Indica el codi d’enclavament del quadre elèctric.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left">Indica el codi de subestació amb que és alimentat el quadre elèctric.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>ESQUEMA_UNIFILAR</td>
+<td align="left">Conté un esquema de l'unifilar de l'armari.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030042" src="../img/030042.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-qgtb
+Nom taula DB: atmgis_03_quadre_electric
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'electric.svg', size: '1.3', weight: '0.5', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="005-armari-de-telecomunicacions">005 Armari de telecomunicacions</h3>
+<blockquote>
+<p><code>Identificador: 03005 | Codi: TEL | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Armari que allotja equips de comunicacions. Armari situat al cos de la parada que allotja els equips de comunicacions del sistema tramviari.</p>
+<p><br/></p>
+<p><center><img alt="030051" src="../img/030051.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>XOC</td>
+<td align="left">Indica la disponibilitat de fibra de Xarxa Oberta de Catalunya.</td>
+<td align="left">[boolean]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>DOCUMENT_ASSOCIAT</td>
+<td align="left">Camp amb un document informatiu de l'armari de telecomunicacions.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030052" src="../img/030052.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-telecom
+Nom taula DB: atmgis_03_armari_de_telecomunicacions
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.5', dasharray: 'continua', color: '#e02c07', fillcolor: '#7a7a7a', fillstyle: 'trama en x']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="006-distribuidor-automatic-de-bitllets">006 Distribuïdor automàtic de bitllets</h3>
+<blockquote>
+<p><code>Identificador: 03006 | Codi: DAB | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Distribuïdora automàtica de bitllets. Màquina per a la consulta, venda i/o càrrega de títols de transport.</p>
+<p><br/></p>
+<p><center><img alt="030061" src="../img/030061.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="030062" src="../img/030062.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_INTERN</td>
+<td align="left">Codi intern de l'aparell de distribució automàtica de bitllets.</td>
+<td align="left">[Integer (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030063" src="../img/030063.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-dab
+Nom taula DB: atmgis_03_distribuidor_automatic_de_bitllets
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'ticket.svg', size: '1', weight: '0.4', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="007-siv">007 SIV</h3>
+<blockquote>
+<p><code>Identificador: 03007 | Codi: SIV | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Sistema d’informació als viatgers. Pantalla per a la informació dels usuaris (temps properes sortides, incidències, etc.).</p>
+<p><br/></p>
+<p><center><img alt="030071" src="../img/030071.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="030072" src="../img/030072.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>TECNOLOGIA</td>
+<td align="left">Fa referència a la tecnologia amb la que està muntat el sistema d'informació al viatger. La tecnologia pot ser LCD o LED . L'atribut ha de tenir un dels següents valors:<ul><li><strong>LCD</strong>: Defineixen LCD com la tecnologia sobre la qual està muntat el Sistema d'informació als viatgers. <a href="../img/0300711.jpg"><strong>Veure</strong></a></li><li><strong>LED</strong>: Defineixen LED com la tecnologia sobre la qual està muntat el Sistema d'informació als viatgers.</li></ul></td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>TIPUS_UBICACIO</td>
+<td align="left">Determina el tipus d'ubicació del sistema d'informació al viatger. La ubicació pot ser pal, moble o marquesina. L'atribut ha de tenir un dels següents valors:<ul><li><strong>Pal</strong>: Defineix que el suport del Sistema d'informació als viatgers és en Pal.</li><li><strong>Paret</strong>: Defineix que el suport del Sistema d'informació als viatgers és en la Paret.</li><li><strong>Marquesina</strong>: Defineix que el suport del Sistema d'informació als viatgers és en Marquesina.</li></ul></td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030073" src="../img/030073.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-siv
+Nom taula DB: atmgis_03_siv
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'siv.svg', size: '1', weight: '0.4', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="008-sistema-dinterfonia">008 Sistema d'interfonia</h3>
+<blockquote>
+<p><code>Identificador: 03008 | Codi: INT | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Sistema d’interfonia de la parada. Sistema d'interfonia (cablejat, micròfon, altaveu, etc.) incrustat dins del cos de la parada per a permetre la comunicació entre els usuaris i el Centre de Control en cas d'incidència o necessitat d'informació.</p>
+<p><br/></p>
+<p><center><img alt="030081" src="../img/030081.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="030082" src="../img/030082.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030083" src="../img/030083.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-interfonia
+Nom taula DB: atmgis_03_sistema_interfonia
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'micro.svg', size: '1', weight: '0.4', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="009-sistema-de-megafonia">009 Sistema de megafonia</h3>
+<blockquote>
+<p><code>Identificador: 03009 | Codi: MEG | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Sistema de megafonia de la parada. Sistema de megafonia (cablejat, altaveus, amplificador, etc.) de la parada que serveix per emetre informació diversa als usuaris (incidències, retards, avisos, etc.).</p>
+<p><br/></p>
+<p><center><img alt="030091" src="../img/030091.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="030092" src="../img/030092.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>NUMERO_MEGAFONS</td>
+<td align="left">Número de megàfons per estació.</td>
+<td align="left">[Integer (2)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030093" src="../img/030093.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-megafonia
+Nom taula DB: atmgis_03_sistema_de_megafonia
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'megafonia.svg', size: '1', weight: '0.4', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="010-aparador">010 Aparador</h3>
+<blockquote>
+<p><code>Identificador: 03010 | Codi: OPI | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Aparador amb informació a l'usuari. Aparador incrustat al cos central de la parada amb informació diversa d'interès per als usuaris.</p>
+<p><br/></p>
+<p><center><img alt="030101" src="../img/030101.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="030102" src="../img/030102.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>DIMENSIONS</td>
+<td align="left">Indica les dimensions de l'aparador amb format: amplada x alçada. Unitats en mil·límetres.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CONTINGUT</td>
+<td align="left">Fa referència al contingut de l'aparador. Pot exposar la xarxa TRAM o bé els horaris del sistema. L'atribut ha de tenir un dels següents valors:<ul><li><strong>Horaris</strong>: Defineix que el contingut de l'aparador és de tipus Horaris (exposa els horaris del TRAM). <a href="../img/0301011.jpg"><strong>Veure</strong></a></li><li><strong>Xarxa</strong>: Defineix que el contingut de l'aparador és de tipus Xarxa (exposa xarxa del TRAM). <a href="../img/0301012.jpg"><strong>Veure</strong></a></li><li><strong>Avisos</strong>: Defineix que el contingut de l'aparador és de tipus Avisos (exposa xarxa del TRAM). </li></ul></td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>VIA</td>
+<td align="left">Determina sobre quin número de via es troba l'element. Els números de via són 1, 2, 3 i 4. Si l'element està en més d'una via s'indicarà les vies separades per un guionet, per exemple: 1-2</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030103" src="../img/030103.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-opi
+Nom taula DB: atmgis_03_aparador
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.5', dasharray: 'continua', color: '#e02c07', fillcolor: '#f67d64', fillstyle: 'solid']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="011-escala-mecanica">011 Escala mecànica</h3>
+<blockquote>
+<p><code>Identificador: 03011 | Codi: ESC | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Escales mecàniques de les parades. Són les escales mecàniques presents a parades singulars, com a l'intercanviador de Cornellà Centre.</p>
+<p><br/></p>
+<p><center><img alt="030111" src="../img/030111.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030112" src="../img/030112.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-escales
+Nom taula DB: atmgis_03_escala_mecanica
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.4', dasharray: '3 1', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="012-ascensors">012 Ascensors</h3>
+<blockquote>
+<p><code>Identificador: 03012 | Codi: ANR | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Ascensors de les parades. Són els ascensors presents a parades singulars, com a l'intercanviador de Cornellà Centre.</p>
+<p><br/></p>
+<p><center><img alt="030121" src="../img/030121.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030122" src="../img/030122.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-ascensors
+Nom taula DB: atmgis_03_ascensors
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.4', dasharray: 'continua', color: '#e02c07', fillcolor: '#df5d43', fillstyle: 'solid', labelby: 'asc']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="013-baranes">013 Baranes</h3>
+<blockquote>
+<p><code>Identificador: 03013 | Codi: BAR | Geometria: LÍNIA</code></p>
+</blockquote>
+<p><br/></p>
+<p>Baranes de seguretat dins del cos de la parada. Són aquelles baranes incloses dins de la parada, normalment en rampes, escales o per separar l'àmbit de la parada de la urbanització o la xarxa viària que l'envolta.</p>
+<p><br/></p>
+<p><center><img alt="030131" src="../img/030131.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030132" src="../img/030132.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-baranes
+Nom taula DB: atmgis_03_baranes
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.5', dasharray: '3 1', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="014-papereres">014 Papereres</h3>
+<blockquote>
+<p><code>Identificador: 03014 | Codi: PAP | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Papereres dins del cos de la parada. Són aquelles papereres incloses dins de la parada per a l'ús dels usuaris.</p>
+<p><br/></p>
+<p><center><img alt="030141" src="../img/030141.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030142" src="../img/030142.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-papereres
+Nom taula DB: atmgis_03_papereres
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'paperera.svg', size: '1', weight: '0.4', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="015-bancs">015 Bancs</h3>
+<blockquote>
+<p><code>Identificador: 03015 | Codi: BAN | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Bancs dins del cos de la parada. Es tracta dels bancs metàl·lics inclosos dins de la parada per a l'ús dels usuaris.</p>
+<p><br/></p>
+<p><center><img alt="030151" src="../img/030151.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030152" src="../img/030152.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-bancs
+Nom taula DB: atmgis_03_bancs
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'banc.svg', size: '1', weight: '0.4', color: '#e02c07']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="015-noms-parades">015 Noms parades</h3>
+<blockquote>
+<p><code>Identificador: 03016 | Codi: NOM | Geometria: -</code></p>
+</blockquote>
+<p><br/></p>
+<p>Nom i ubicació principal de les parades del tramvia. Es tracta d'una capa virtual per visualitzar els noms de les parades.</p>
+<p><br/></p>
+<p><center><img alt="030161" src="../img/030161.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="030162" src="../img/030162.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>NOM_PARADA</td>
+<td align="left">Indica el nom de la parada a la qual pertany l'andana.</td>
+<td align="left">[String (40)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Fa referència al número de la parada. Nomenclatura P-XX on XX és el número de parada.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="030163" src="../img/030163.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Parades-noms
+Nom taula DB: atmgis_03_noms_parades
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'marker', size: '2', color: '#009688', fillcolor: '#009688', fillstyle: 'solid', labelby: '@nom_parada']
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

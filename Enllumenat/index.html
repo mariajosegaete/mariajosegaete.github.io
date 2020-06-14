@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>07 Enllumenat - Model de Dades de la Infraestructura Tramviaria</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="..">Model de Dades de la Infraestructura Tramviaria</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obra Civil <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Domini_public/">01 Domini Public</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tracat/">02 Traçat</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Parades/">03 Parades</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Pavimentacio/">04 Pavimentació</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Reg/">05 Reg</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Drenatge/">06 Drenatge</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">07 Enllumenat</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Tramviaris <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Catenaria/">08 Catenària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Multitubular/">09 Multitubular</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Energia/">10 Energia</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Subestacions/">11 Subestacions</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../SAE/">12 SAE</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_ferroviaria/">13 Senyalització ferroviària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Semaforitzacio/">14 Semaforització</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_viaria/">15 Senyalització viària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Videovigilancia/">16 Videovigilància</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tallers_i_cotxeres/">17 Tallers i Cotxeres</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Auxiliars <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Mobiliari_urba/">18 Mobiliari urbà</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Estructures_complementaries/">19 Estructures complementàries</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Drenatge/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../Catenaria/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#07-enllumenat">07 Enllumenat</a></li>
+            <li class="second-level"><a href="#001-linies">001 Línies</a></li>
+                
+            <li class="second-level"><a href="#002-punts-de-llum">002 Punts de llum</a></li>
+                
+            <li class="second-level"><a href="#003-columnes">003 Columnes</a></li>
+                
+            <li class="second-level"><a href="#004-elements-led-de-parada">004 Elements LED de parada</a></li>
+                
+            <li class="second-level"><a href="#005-quadres-municipals">005 Quadres Municipals</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="07-enllumenat">07 Enllumenat</h2>
+<p><br/></p>
+<blockquote>
+<p>Grup: Obra Civil · Número elements: 5</p>
+</blockquote>
+<p><br/></p>
+<p>Es tracta del conjunt d'elements (punts de llum, suports, línies, etc.) presents a la plataforma del tramvia que il·luminen tant l'àmbit de la parada, la plataforma del tramvia i, en ocasions, la resta de la via pública.</p>
+<p><br/></p>
+<h3 id="001-linies">001 Línies</h3>
+<blockquote>
+<p><code>Identificador: 07001 | Codi: LIN | Geometria: LÍNIA</code></p>
+</blockquote>
+<p><br/></p>
+<p>Estesa de cable elèctric que porta electricitat als punts de llum. Es tracta del cablejat que forma part del sistema d'enllumenat juntament amb els punts de llum i els alimenta.</p>
+<p><br/></p>
+<p><center><img alt="070011" src="../img/070011.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>QUADRE</td>
+<td align="left">Indica el quadre de comandament al qual està connectada la línia.</td>
+<td align="left">[String (200)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="070012" src="../img/070012.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Enllumenat-linies
+Nom taula DB: atmgis_07_linies
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: '3 1', color: '#f8d01a']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="002-punts-de-llum">002 Punts de llum</h3>
+<blockquote>
+<p><code>Identificador: 07002 | Codi: LUM | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Punts de llum dins de la plataforma del tramvia. Es tracta de les lluminàries, ja siguin de parada o d'enllumenat de via pública, ubicades dins de la plataforma tramviària.</p>
+<p><br/></p>
+<p><center><img alt="070021" src="../img/070021.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>TIPUS</td>
+<td align="left">Indica el model de lluminària emprat per al punt de llum.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>POTENCIA</td>
+<td align="left">Fa referència a la potència de la lluminària en watts.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="070022" src="../img/070022.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Enllumenat-Punts de llum
+Nom taula DB: atmgis_07_punts_de_llum
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'punt_llum.svg', size: '5', weight: '0.4', color: '#fab92c', fillcolor: '#f8d01a']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="003-columnes">003 Columnes</h3>
+<blockquote>
+<p><code>Identificador: 07003 | Codi: COL | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Pals amb dedicació exclusiva a l'enllumenat. Columnes que sustenten els diferents punts de llum al llarg de la plataforma del tramvia.</p>
+<p><br/></p>
+<p><center><img alt="070031" src="../img/070031.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>TIPUS</td>
+<td align="left">Indica el tipus de columna sobre la que se sustenta el punt de llum. L'atribut ha de tenir un dels següents valors:<ul><li><strong>Prim</strong>: Indica que el tipus de columna de l'enllumenat és de tipus Prim. <a href="../img/0700311.pdf"><strong>Veure</strong></a> </li><li><strong>Acer galvanizat</strong>: Indica que el tipus de columna de l'enllumenat és de tipus Acer galvanitzat. </li><li><strong>Troncoconica</strong>: Indica que el tipus de columna de l'enllumenat és de tipus Troncocònica. </li><li><strong>Catenaria</strong>: Indica que el tipus de columna de l'enllumenat és de tipus Catenaria. </li><li><strong>Plus con soporte para catenaria</strong>: Indica que el tipus de columna de l'enllumenat és de tipus Plus con soporte para catenaria. </li></td>
+<td align="left">[String (40)]</td>
+</tr>
+<tr>
+<td>ALCADA</td>
+<td align="left">Indica l'alçada de la columna sobre la que se sustenta el punt de llum. Unitats en metres.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="070032" src="../img/070032.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Enllumenat-columnes
+Nom taula DB: atmgis_07_columnes
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'pal.svg', size: '3', weight: '0.3', color: '#ff7f00', fillcolor: '#fdbf6f']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="004-elements-led-de-parada">004 Elements LED de parada</h3>
+<blockquote>
+<p><code>Identificador: 07004 | Codi: LED | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Il·luminació LED de les parades. Es tracta de la il·luminació de tecnologia LED situada a les parades.</p>
+<p><br/></p>
+<p><center><img alt="070041" src="../img/070041.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="070042" src="../img/070042.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="070043" src="../img/070043.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Enllumenat-leds parada
+Nom taula DB: atmgis_07_elements_led_de_parada
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'punt_reg.svg', size: '1.2', weight: 'sin borde', color: '#fab92c', fillcolor: '#f3bf4f']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="005-quadres-municipals">005 Quadres Municipals</h3>
+<blockquote>
+<p><code>Identificador: 07005 | Codi: QMU | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Quadres d'enllumenat municipals. Són els quadres municipals que donen energia a l'enllumenat de via pública.</p>
+<p><br/></p>
+<p><center><img alt="070051" src="../img/070051.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>QUADRE</td>
+<td align="left">Indica el quadre de comandament al qual està connectada la línia.</td>
+<td align="left">[String (200)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="070052" src="../img/070052.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Enllumenat- quadres municipals
+Nom taula DB: atmgis_07_quadres_municipals
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'armari.svg', angle: '90', size: '3', weight: '0.3', color: '#cb8906', fillcolor: '#fae491']
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

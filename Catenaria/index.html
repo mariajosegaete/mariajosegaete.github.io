@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>08 Catenària - Model de Dades de la Infraestructura Tramviaria</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="..">Model de Dades de la Infraestructura Tramviaria</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obra Civil <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Domini_public/">01 Domini Public</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tracat/">02 Traçat</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Parades/">03 Parades</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Pavimentacio/">04 Pavimentació</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Reg/">05 Reg</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Drenatge/">06 Drenatge</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Enllumenat/">07 Enllumenat</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Tramviaris <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">08 Catenària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Multitubular/">09 Multitubular</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Energia/">10 Energia</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Subestacions/">11 Subestacions</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../SAE/">12 SAE</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_ferroviaria/">13 Senyalització ferroviària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Semaforitzacio/">14 Semaforització</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_viaria/">15 Senyalització viària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Videovigilancia/">16 Videovigilància</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tallers_i_cotxeres/">17 Tallers i Cotxeres</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Auxiliars <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Mobiliari_urba/">18 Mobiliari urbà</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Estructures_complementaries/">19 Estructures complementàries</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Enllumenat/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../Multitubular/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#08-catenaria">08 Catenària</a></li>
+            <li class="second-level"><a href="#001-seccionadors">001 Seccionadors</a></li>
+                
+            <li class="second-level"><a href="#002-lac">002 LAC</a></li>
+                
+            <li class="second-level"><a href="#003-pals">003 Pals</a></li>
+                
+            <li class="second-level"><a href="#004-subjeccions">004 Subjeccions</a></li>
+                
+            <li class="second-level"><a href="#005-portics">005 Pòrtics</a></li>
+                
+            <li class="second-level"><a href="#006-tensors">006 Tensors</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="08-catenaria">08 Catenària</h2>
+<p><br/></p>
+<blockquote>
+<p>Grup: Sistemes Tramviaris · Número elements: 6</p>
+</blockquote>
+<p><br/></p>
+<p>Sistema de suspensió dels cables que constitueixen la línia aèria d'alimentació del tramvia, disposada de manera que el fil de contacte resti en tots els seus punts a una determinada altura sobre la via.</p>
+<p><br/></p>
+<h3 id="001-seccionadors">001 Seccionadors</h3>
+<blockquote>
+<p><code>Identificador: 08001 | Codi: SEC | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Element que permet l'aïllar una o vàries seccions elèctriques. Els seccionadors són utilitzats per seccionar diferents trams de catenària, ja sigui en cas d'incidència o per necessitats de manteniment.</p>
+<p><br/></p>
+<p><center><img alt="080011" src="../img/080011.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>SUBSECCIO_1</td>
+<td align="left">Indica el nom de la secció elèctrica inicial separada pel seccionador.</td>
+<td align="left">[String (200)]</td>
+</tr>
+<tr>
+<td>SUBSECCIO_2</td>
+<td align="left">Indica el nom de la secció elèctrica final separada pel seccionador.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>TIPUS</td>
+<td align="left">Fa referència als diferents tipus d'aïlladors de secció. L'atribut ha de tenir un dels següents valors:<ul><li><strong>IAT</strong>: Interruptor d'Aïllament Telecomandat. </li><li><strong>DAT</strong>: Disjuntor d'Aïllament Telecomandat. </li><li><strong>SAT</strong>: Seccionador d'Aïllament Telecomandat. </li></td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="080012" src="../img/080012.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Catenaria-seccionadors
+Nom taula DB: atmgis_08_seccionadors
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'seccionador.svg', size: '2', weight: '0.4', color: '#813753', fillcolor: '#c1766f']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="002-lac">002 LAC</h3>
+<blockquote>
+<p><code>Identificador: 08002 | Codi: FDC | Geometria: LÍNIA</code></p>
+</blockquote>
+<p><br/></p>
+<p>Línia aèria de contacte (LAC). Són els fils conductors des dels quals els tramvies capten l'energia elèctrica necessària, per mitjà del pantògraf embarcat. La seva tensió nominal és 750Vcc.</p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>SECCIO</td>
+<td align="left">Conté la codificació de la secció elèctrica en la que es troba el fil de contacte.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>SUBSECCIO</td>
+<td align="left">Conté la codificació de la subsecció elèctrica en la que es troba el fil de contacte.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="080021" src="../img/080021.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Catenaria-fil de contacte
+Nom taula DB: atmgis_08_lac
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.5', dasharray: '3 1', color: '#813753']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="003-pals">003 Pals</h3>
+<blockquote>
+<p><code>Identificador: 08003 | Codi: PCT | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Pals de catenària. Els pals, de diferent secció i alçada segons les necessitats, van fixats al sòl mitjançant massissos de formigó i acullen els elements de sustentació de la línia d'aèria de contacte. Ocasionalment i amb l'objectiu de minimitzar el nombre d'elements verticals de la via pública, també poden portar enllumenat.</p>
+<p><br/></p>
+<p><center><img alt="080031" src="../img/080031.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>TIPUS_PAL</td>
+<td align="left">Indica el model de pal de catenària. L'atribut ha de tenir un dels següents valors:<ul><li><strong>1</strong>: Tipus de pal. <a href="../img/0800311.pdf"><strong>Veure</strong></a> </li><li><strong>10</strong>: Tipus de pal. <a href="../img/0800312.pdf"><strong>Veure</strong></a> </li><li><strong>1R</strong>: Tipus de pal. <a href="../img/0800313.pdf"><strong>Veure</strong></a> </li><li><strong>2</strong>: Tipus de pal. <a href="../img/0800314.pdf"><strong>Veure</strong></a> </li><li><strong>2E</strong>: Tipus de pal. <a href="img/0800315.jpg"><strong>Veure</strong></a> </li><li><strong>2E DIAM 260</strong>: Tipus de pal. <a href="../img/0800316.pdf"><strong>Veure</strong></a> </li><li><strong>3</strong>: Tipus de pal. <a href="../img/0800317.pdf"><strong>Veure</strong></a> </li><li><strong>3b</strong>: Tipus de pal. <a href="../img/0800318.pdf"><strong>Veure</strong></a> </li><li><strong>4</strong>: Tipus de pal. <a href="../img/0800319.pdf"><strong>Veure</strong></a> </li><li><strong>4-10</strong>: Tipus de pal. <a href="../img/08003110.pdf"><strong>Veure</strong></a> </li><li><strong>4-9</strong>: Tipus de pal. <a href="../img/08003111.pdf"><strong>Veure</strong></a> </li><li><strong>4A</strong>: Tipus de pal. <a href="../img/08003112.pdf"><strong>Veure</strong></a> </li><li><strong>4A10</strong>: Tipus de pal. <a href="../img/08003113.pdf"><strong>Veure</strong></a> </li><li><strong>4Abis</strong>: Tipus de pal. <a href="../img/08003114.pdf"><strong>Veure</strong></a> </li><li><strong>4AE</strong>: Tipus de pal. <a href="../img/08003115.pdf"><strong>Veure</strong></a> </li><li><strong>4bis</strong>: Tipus de pal. <a href="../img/08003116.pdf"><strong>Veure</strong></a> </li><li><strong>4E</strong>: Tipus de pal. <a href="../img/08003117.pdf"><strong>Veure</strong></a> </li><li><strong>4E'</strong>: Tipus de pal. <a href="../img/08003118.pdf"><strong>Veure</strong></a> </li><li><strong>4R</strong>: Tipus de pal. <a href="../img/08003119.pdf"><strong>Veure</strong></a> </li><li><strong>5.1</strong>: Tipus de pal. <a href="../img/08003120.pdf"><strong>Veure</strong></a> </li><li><strong>5.2</strong>: Tipus de pal. <a href="../img/08003121.pdf"><strong>Veure</strong></a> </li><li><strong>6</strong>: Tipus de pal. <a href="../img/08003122.pdf"><strong>Veure</strong></a> </li><li><strong>6E</strong>: Tipus de pal. <a href="../img/08003123.pdf"><strong>Veure</strong></a> </li><li><strong>6R</strong>: Tipus de pal. <a href="../img/08003124.pdf"><strong>Veure</strong></a> </li><li><strong>7</strong>: Tipus de pal. <a href="../img/08003125.pdf"><strong>Veure</strong></a> </li><li><strong>8</strong>: Tipus de pal. <a href="../img/08003126.pdf"><strong>Veure</strong></a> </li><li><strong>8bis</strong>: Tipus de pal. <a href="../img/08003127.pdf"><strong>Veure</strong></a> </li><li><strong>9</strong>: Tipus de pal. <a href="../img/08003128.pdf"><strong>Veure</strong></a> </li><li><strong>HEB 200 ANCORATGE 1</strong>: Tipus de pal. <a href="../img/08003129.pdf"><strong>Veure</strong></a> </li><li><strong>HEB 200 S-55</strong>: Tipus de pal. <a href="../img/08003130.pdf"><strong>Veure</strong></a> </li><li><strong>HEB 200 S-57</strong>: Tipus de pal. <a href="../img/08003131.pdf"><strong>Veure</strong></a> </li><li><strong>HEB 320</strong>: Tipus de pal. <a href="../img/08003132.pdf"><strong>Veure</strong></a> </li><li><strong>IMPU</strong>: Tipus de pal. <a href="../img/08003133.pdf"><strong>Veure</strong></a> </li><li><strong>PRIM</strong>: Tipus de pal. <a href="../img/08003134.pdf"><strong>Veure</strong></a> </li><li><strong>HEB 200</strong>: Tipus de pal. <a href="../img/08003135.pdf"><strong>Veure</strong></a> </li><li><strong>HEB 220</strong>: Tipus de pal. </li><li><strong>HEB 280</strong>: Tipus de pal. </li><li><strong>HEB 300</strong>: Tipus de pal. <a href="../img/08003136.pdf"><strong>Veure</strong></a> </li><li><strong>A4/4R</strong>: Tipus de pal. <a href="../img/08003137.pdf"><strong>Veure</strong></a> </li><li><strong>HEB 300 TIPUS 5</strong>: Tipus de pal. <a href="../img/08003138.pdf"><strong>Veure</strong></a> </li><li><strong>HEB 300 TIPUS 5A</strong>: Tipus de pal. <a href="../img/08003139.pdf"><strong>Veure</strong></a> </li></td>
+<td align="left">[String (25)]</td>
+</tr>
+<tr>
+<td>NUMERO</td>
+<td align="left">Fa referència a la numeració interna del pal.</td>
+<td align="left">[String (10)]</td>
+</tr>
+<tr>
+<td>TIPUS_SUSTENTACIO</td>
+<td align="left">Conté el tipus de sustentació del pal. La sustentació pot ser de tipus mènsula, pòrtic o tensors. L'atribut ha de tenir un dels següents valors:<ul><li><strong>Mensula</strong>: Indica que la sustentació de la que disposa el pal és de tipus mènsula. <a href="../img/08003140.jpg"><strong>Veure</strong></a> </li><li><strong>Portic</strong>: Indica que la sustentació de la que disposa el pal és de tipus pòrtic. <a href="../img/08003141.jpg"><strong>Veure</strong></a> </li><li><strong>Tibant</strong>: Indica que la sustentació de la que disposa el pal és de tipus tibant. <a href="../img/08003142.jpg"><strong>Veure</strong></a> </li><li><strong>Mensula-Portic</strong>: </li><li><strong>Mensula-Portic-Tibant</strong>: </li><li><strong>Mensula-Tibant</strong>: </li><li><strong>Portic-Tibant</strong>: </li></td>
+<td align="left"> [String (30)]</td>
+</tr>
+<tr>
+<td>ALCADA_LAC_V1</td>
+<td align="left">Es refereix a l'alçada que pren el fil de contacte a la Via 1.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+<tr>
+<td>ALCADA_LAC_V2</td>
+<td align="left">Es refereix a l'alçada que pren el fil de contacte a la Via 2.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+<tr>
+<td>TIPUS_FONAMENT</td>
+<td align="left">Indica el tipus de fonamentació del pal.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>DOCUMENT_ FONAMENT</td>
+<td align="left">Document PDF amb la informació del massis o fonament.</td>
+<td align="left">[String (100)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="080032" src="../img/080032.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Catenaria-pals
+Nom taula DB: atmgis_08_pals
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'pal.svg', size: '3', weight: '0.3', color: '#813753', fillcolor: '#c1766f']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="004-subjeccions">004 Subjeccions</h3>
+<blockquote>
+<p><code>Identificador: 08004 | Codi: SBJ | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Elements de subjecció de la LAC en casos singulars. Elements que permeten la subjecció de la línia aèria de contacte en casos d'alçada lliure insuficient, com passos inferiors.</p>
+<p><br/></p>
+<p><center><img alt="080041" src="../img/080041.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>NUMERO</td>
+<td align="left"> Fa referència a la numeració interna de la subjecció.</td>
+<td align="left">[Integer (3)]</td>
+</tr>
+<tr>
+<td>TIPUS_SUBJECCIONS</td>
+<td align="left">Indica amb quin tipus de subjecció compta la catenària.</td>
+<td align="left">[String (50)]</td>
+</tr>
+<tr>
+<td>ALCADA_LAC_V1</td>
+<td align="left">Es refereix a l'alçada que pren el fil de contacte a la Via 1.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+<tr>
+<td>ALCADA_LAC_V2</td>
+<td align="left"> Es refereix a l'alçada que pren el fil de contacte a la Via 2.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="080042" src="../img/080042.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Catenaria-subjeccions
+Nom taula DB: atmgis_08_subjeccions
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'subjeccions.svg', size: '1', weight: '1', color: '#813753']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="005-portics">005 Pòrtics</h3>
+<blockquote>
+<p><code>Identificador: 08005 | Codi: POR | Geometria: LÍNIA</code></p>
+</blockquote>
+<p><br/></p>
+<p>Element de sustentació de la LAC que permet cobrir grans llums. Els pòrtics són elements que, mitjançant l'estesa de cable no electrificat entre pals, sustenten la línia aèria de contacte deixant un àmbit diàfan i lliure d'obstacles.</p>
+<p><br/></p>
+<p><center><img alt="080051" src="../img/080051.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="080052" src="../img/080052.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Catenaria-pòrtics
+Nom taula DB: atmgis_08_portics
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.45', dasharray: '3 1', color: '#c1766f']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="006-tensors">006 Tensors</h3>
+<blockquote>
+<p><code>Identificador: 08006 | Codi: TIV | Geometria: LÍNIA</code></p>
+</blockquote>
+<p><br/></p>
+<p>Cablejat no electrificat que tensa el fil de contacte. Cablejat no electrificat que tensa la catenària per tal que aquesta segueixi el traçat correcte.</p>
+<p><br/></p>
+<p><center><img alt="080061" src="../img/080061.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="080062" src="../img/080062.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="080063" src="../img/080063.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Catenaria-tensors
+Nom taula DB: atmgis_08_tensors
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: '2 1', color: '#c1766f']
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

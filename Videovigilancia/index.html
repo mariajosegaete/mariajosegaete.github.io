@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>16 Videovigilància - Model de Dades de la Infraestructura Tramviaria</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="..">Model de Dades de la Infraestructura Tramviaria</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obra Civil <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Domini_public/">01 Domini Public</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tracat/">02 Traçat</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Parades/">03 Parades</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Pavimentacio/">04 Pavimentació</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Reg/">05 Reg</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Drenatge/">06 Drenatge</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Enllumenat/">07 Enllumenat</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Tramviaris <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Catenaria/">08 Catenària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Multitubular/">09 Multitubular</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Energia/">10 Energia</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Subestacions/">11 Subestacions</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../SAE/">12 SAE</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_ferroviaria/">13 Senyalització ferroviària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Semaforitzacio/">14 Semaforització</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_viaria/">15 Senyalització viària</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">16 Videovigilància</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tallers_i_cotxeres/">17 Tallers i Cotxeres</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Auxiliars <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Mobiliari_urba/">18 Mobiliari urbà</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Estructures_complementaries/">19 Estructures complementàries</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Senyalitzacio_viaria/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../Tallers_i_cotxeres/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#16-videovigilancia">16 Videovigilància</a></li>
+            <li class="second-level"><a href="#001-cameres">001 Càmeres</a></li>
+                
+            <li class="second-level"><a href="#002-armaris">002 Armaris</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="16-videovigilancia">16 Videovigilància</h2>
+<p><br/></p>
+<blockquote>
+<p>Grup: Sistemes Tramviaris · Número elements: 2</p>
+</blockquote>
+<p><br/></p>
+<p>Es tracta del sistema o circuit de videocàmeres instal·lades a parades, cruïlles, zones de maniobra i altres instal·lacions tramviàries, per a la vigilància i seguretat de les instal·lacions i usuaris, així com per a la gestió d'incidències.</p>
+<p><br/></p>
+<h3 id="001-cameres">001 Càmeres</h3>
+<blockquote>
+<p><code>Identificador: 16001 | Codi: CAM | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Càmeres de videovigilància. El sistema de videovigilància consisteix en un conjunt de càmeres de vídeo, connectades a un aparell de registre i connexió amb el Centre de Control, des d'on es poden descarregar i/o veure imatges en temps real d'un àmbit d'interès dins del domini públic del tramvia.</p>
+<p><br/></p>
+<p><center><img alt="160011" src="../img/160011.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="160012" src="../img/160012.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_INTERN</td>
+<td align="left">Codi intern de la càmera.</td>
+<td align="left">[String (10)]</td>
+</tr>
+<tr>
+<td>MODEL</td>
+<td align="left">Indiquen el model de la càmera.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CABLEJAT</td>
+<td align="left">Indica el tipus de cableja que vas des de la videocàmera l'armari corresponent. Pot ser FO (fibra òptica), UTP (ethernet) o Coaxial . L'atribut ha de tenir un dels següents valors: <ul><li><strong>Coaxial</strong>: Defineix el tipus de cablejat del circuit de videovigilància com a Coaxial. <a href="img/1600111.jpg"><strong>Veure</strong></a> </li><li><strong>FO (fibra optica)</strong>: Defineix el tipus de cablejat del circuit de videovigilància com a FO. <a href="../img/1600112.jpg"><strong>Veure</strong></a> </li><li><strong>UTP</strong>: Defineix el tipus de cablejat del circuit de videovigilància com a UTP (ethernet). <a href="../img/1600113.jpg"><strong>Veure</strong></a> </li><li><strong>UTP+FO</strong>: Defineix el tipus de cablejat del circuit de videovigilància com a UTP+FO. </li></td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_PARADA</td>
+<td align="left">Codi de la parada a la que estan connectades les càmeres.</td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="160013" src="../img/160013.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Videovigilància-càmeres
+Nom taula DB: atmgis_16_cameres
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'camera.svg', size: '3', weight: '0.5', color: '#777300', fillcolor: '#f9f957']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="002-armaris">002 Armaris</h3>
+<blockquote>
+<p><code>Identificador: 16002 | Codi: ARV | Geometria: PUNT</code></p>
+</blockquote>
+<p><br/></p>
+<p>Armaris de videovigilància Són els armaris que emmagatzemen equips necessaris per al funcionament del sistema de videovigilància, tals com convertidors fibra-ethernet, switchos, videogravadors, etc.</p>
+<p><br/>
+<center><img alt="160021" src="../img/160021.jpg" /></center>
+<br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>TIPUS</td>
+<td align="left">Defineix la diferent tipologia dels armaris inclosos dins del sistema de videovigilància. Aquests poden ser de cablejat, de videogravador, o de conversió fibra-Ethernet. L'atribut ha de tenir un dels següents valors:<ul><li><strong>conversio fibra-ethernet</strong>: Indica que l'armari de videovigilància és de tipus conversió de fibra òptica a Ethernet. </li><li><strong>videogravador</strong>: Indica que l'armari de videovigilància és de tipus videogravador. </li><li><strong>cablejat</strong>: Indica que l'armari de videovigilància és de tipus cablejat. </li></td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="160022" src="../img/160022.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Videovigilància-armaris
+Nom taula DB: atmgis_16_armaris
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [symbol: 'armari.svg', angle: '90', size: '3', weight: '0.3', color: '#777300', fillcolor: '#f9f957']
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

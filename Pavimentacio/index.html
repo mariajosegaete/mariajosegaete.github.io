@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>04 Pavimentació - Model de Dades de la Infraestructura Tramviaria</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="..">Model de Dades de la Infraestructura Tramviaria</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obra Civil <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Domini_public/">01 Domini Public</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tracat/">02 Traçat</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Parades/">03 Parades</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">04 Pavimentació</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Reg/">05 Reg</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Drenatge/">06 Drenatge</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Enllumenat/">07 Enllumenat</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Tramviaris <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Catenaria/">08 Catenària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Multitubular/">09 Multitubular</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Energia/">10 Energia</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Subestacions/">11 Subestacions</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../SAE/">12 SAE</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_ferroviaria/">13 Senyalització ferroviària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Semaforitzacio/">14 Semaforització</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_viaria/">15 Senyalització viària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Videovigilancia/">16 Videovigilància</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tallers_i_cotxeres/">17 Tallers i Cotxeres</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Auxiliars <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Mobiliari_urba/">18 Mobiliari urbà</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Estructures_complementaries/">19 Estructures complementàries</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Parades/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../Reg/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#04-pavimentacio">04 Pavimentació</a></li>
+            <li class="second-level"><a href="#001-paviment">001 Paviment</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="04-pavimentacio">04 Pavimentació</h2>
+<p><br/></p>
+<blockquote>
+<p>Grup: Obra Civil · Número elements: 1</p>
+</blockquote>
+<p><br/></p>
+<p>Fa referència al conjunt de recobriments asfàltics, naturals, cimentats o empedrats amb els quals es revesteix la plataforma tramviària en funció de les necessitats requerides.</p>
+<p><br/></p>
+<h3 id="001-paviment">001 Paviment</h3>
+<blockquote>
+<p><code>Identificador: 04001 | Codi: PAV | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Revestiment de la plataforma tramviària. La tipologia de revestiment de la plataforma del tramvia varia segons les característiques de cada zona.</p>
+<p><br/></p>
+<p><center><img alt="040011" src="../img/040011.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>TIPUS_PAVIMENTACIO</td>
+<td align="left">Indica el tipus de pavimentació de la zona en concret. L'atribut ha de tenir un dels següents valors:<ul><li><strong>Aglomerat</strong>: El formigó asfàltic en el qual s'utilitza com a aglomerant algun hidrocarbur com l'asfalt mesclat amb àrids, com la grava o la sorra, per les seves propietats de resistència i impermeabilització. <a href="../img/0400111.jpg"><strong>Veure</strong></a></li><li><strong>Formigo</strong>: El formigó és el material de construcció resultant de la mescla de ciment (o un altre conglomerant) amb grava, sorra i aigua. La mescla esdevé una pasta emmotllable amb propietats adherents, que en poques hores s'endureix i esdevé un material de consistència pètria. <a href="../img/0400112.jpg"><strong>Veure</strong></a></li><li><strong>Llamborda</strong>: Els llambordins són pedres o blocs de forma rectangular que es fan servir per construir paviments. <a href="../img/0400113.jpg"><strong>Veure</strong></a></li><li><strong>Llosa formigo</strong>: Es tracta d'un llosat de formigó per a paviments, amb un bon gruix, de forma quadrada o rectangular. <a href="../img/0400114.jpg"><strong>Veure</strong></a> </li><li><strong>Llosa pedra</strong>: Es tracta d'un llosat de pedra per a paviments, amb un bon gruix, de forma quadrada o rectangular. S'utilitzen tipus de roca abundants i duradors. <a href="../img/0400115.jpg"><strong>Veure</strong></a> </li><li><strong>Gespa</strong>: Recobriment amb gespa de jardineria, amb sistema de drenatge i reg per al seu manteniment. <a href="../img/0400116.jpg"><strong>Veure</strong></a> </li><li><strong>Granit</strong>: Peces de granit normalment utilitzades com a vorades delimitadores o vores d'andana, però també encintats de passos de vianants i altres superfícies transitables. <a href="../img/0400117.jpg"><strong>Veure</strong></a> </li><li><strong>Panot</strong>: El panot es un paviment realitzat amb formigó que s'utilitza per a pavimentar voreres de vianants i, en el cas de les parades del tramvia, també com a encaminament d'invidents. <a href="../img/0400118.jpg"><strong>Veure</strong></a> </li><li><strong>Andana</strong>: Pavimentació per a la zona d'andanes. </li></ul></td>
+<td align="left">[String (20)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/></p>
+<p><center><img alt="040012" src="../img/040012.jpg" /></center></p>
+<p><br/></p>
+<pre><code>Nom capa element: Pavimentació-paviment
+Nom taula DB: atmgis_04_paviment
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    aglomerat [weight: '0.26', dasharray: 'continua', color: '#232323', opacity: '0', fillcolor: '#d4d6c8', fillstyle: 'solid']
+    andana [weight: '0.26', dasharray: 'continua', color: '#232323', opacity: '0', fillcolor: '#9ab5c1', fillstyle: 'solid']
+    formigo [weight: '0.26', dasharray: 'continua', color: '#232323', opacity: '0', fillcolor: '#9a9b94', fillstyle: 'solid']
+    gespa [weight: '0.26', dasharray: 'continua', color: '#232323', opacity: '0', fillcolor: '#d6f8b8', fillstyle: 'solid']
+    granit [weight: '0.26', dasharray: 'continua', color: '#232323', opacity: '0', fillcolor: '#e6e9d2', fillstyle: 'solid']
+    llamborda [weight: '0.26', dasharray: 'continua', color: '#232323', opacity: '0', fillcolor: '#e3e2c3', fillstyle: 'solid']
+    llosa formigo [weight: '0.26', dasharray: 'continua', color: '#232323', opacity: '0', fillcolor: '#808b97', fillstyle: 'solid']
+    llosa pedra [weight: '0.26', dasharray: 'continua', color: '#232323', opacity: '0', fillcolor: '#f09872', fillstyle: 'solid']
+    panot [weight: '0.26', dasharray: 'continua', color: '#f7f7f7', opacity: '0', fillcolor: '#b5cfd8', fillstyle: 'solid']
+</code></pre>
+<p><br/><br/></p></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

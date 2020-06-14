@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>11 Subestacions - Model de Dades de la Infraestructura Tramviaria</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="..">Model de Dades de la Infraestructura Tramviaria</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obra Civil <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Domini_public/">01 Domini Public</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tracat/">02 Traçat</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Parades/">03 Parades</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Pavimentacio/">04 Pavimentació</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Reg/">05 Reg</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Drenatge/">06 Drenatge</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Enllumenat/">07 Enllumenat</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Tramviaris <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Catenaria/">08 Catenària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Multitubular/">09 Multitubular</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Energia/">10 Energia</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">11 Subestacions</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../SAE/">12 SAE</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_ferroviaria/">13 Senyalització ferroviària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Semaforitzacio/">14 Semaforització</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_viaria/">15 Senyalització viària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Videovigilancia/">16 Videovigilància</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tallers_i_cotxeres/">17 Tallers i Cotxeres</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Auxiliars <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Mobiliari_urba/">18 Mobiliari urbà</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Estructures_complementaries/">19 Estructures complementàries</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Energia/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../SAE/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#11-subestacions">11 Subestacions</a></li>
+            <li class="second-level"><a href="#001-obra-civil">001 Obra Civil</a></li>
+                
+            <li class="second-level"><a href="#002-transformadors">002 Transformadors</a></li>
+                
+            <li class="second-level"><a href="#003-celles-mt-25-kv">003 Cel·les MT 25 kV</a></li>
+                
+            <li class="second-level"><a href="#004-rectificadors-900-kw">004 Rectificadors 900 kW</a></li>
+                
+            <li class="second-level"><a href="#005-carregadors-i-bateries">005 Carregadors i bateries</a></li>
+                
+            <li class="second-level"><a href="#006-quadre-bt">006 Quadre BT</a></li>
+                
+            <li class="second-level"><a href="#007-quadre-de-control">007 Quadre de control</a></li>
+                
+            <li class="second-level"><a href="#008-quadre-de-seccionadors-750-vcc">008 Quadre de seccionadors 750 VCC</a></li>
+                
+            <li class="second-level"><a href="#009-disjuntor-750-vcc">009 Disjuntor 750 VCC</a></li>
+                
+            <li class="second-level"><a href="#010-saa">010 SAA</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="11-subestacions">11 Subestacions</h2>
+<p><br/></p>
+<blockquote>
+<p>Grup: Sistemes Tramviaris · Número elements: 10</p>
+</blockquote>
+<p><br/></p>
+<p>Emplaçaments, soterrats o en superfície, que reben l'energia elèctrica i la transformen i rectifiquen per als diferents consums del sistema tramviari.</p>
+<p><br/></p>
+<h3 id="001-obra-civil">001 Obra Civil</h3>
+<blockquote>
+<p><code>Identificador: 11001 | Codi: OBC | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Emplaçament de la subestació. La subestació de tracció transforma i rectifica l'energia elèctrica proveïda de companyia a unes condicions de voltatge, corrent i freqüència adients per als diferents consums del tramvia. En aquest cas, l'element obra civil contempla el perímetre del conjunt.</p>
+<p><br/></p>
+<p><center><img alt="110011" src="../img/110011.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="110012" src="../img/110012.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left">Indica el codi intern de la subestació.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+<tr>
+<td>DOCUMENT_ASSOCIAT</td>
+<td align="left">Nom d'un o més documents associats amb plànols de diversos detalls de l'element en qüestió.</td>
+<td align="left">[String (80)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110013" src="../img/110013.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-obra civil
+Nom taula DB: atmgis_11_obra_civil
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.5', dasharray: 'continua', color: '#434343', fillcolor: '#6e6e6e', fillstyle: 'trama en x', labelby: '@nom_subestacio + @codi_subestacio']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="002-transformadors">002 Transformadors</h3>
+<blockquote>
+<p><code>Identificador: 11002 | Codi: TRA | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Transformador de tensió elèctrica. Màquina elèctrica d’inducció electromagnètica que permet convertir els valors de tensió d’entrada en valors diferents de sortida, sense modificar la potència.</p>
+<p><br/>
+<center><img alt="110021" src="../img/110021.jpg" /></center>
+<br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left">Indica el codi intern de la subestació.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+<tr>
+<td>POTENCIA</td>
+<td align="left">Potencia del transformador.</td>
+<td align="left">[String (10)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110022" src="../img/110022.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-trafos
+Nom taula DB: atmgis_11_transformadors
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: 'continua', color: '#434343', fillcolor: '#eaeaea', fillstyle: 'solid', labelby: 't']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="003-celles-mt-25-kv">003 Cel·les MT 25 kV</h3>
+<blockquote>
+<p><code>Identificador: 11003 | Codi: CEL | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Cel·les de mitja tensió. Conjunt de seccions verticals on es troben ubicats diferents equips - de maniobra (interruptors de potència, seccionadors,...) de mesura (transformadors de tensió i de corrent,...) i de protecció/control – muntats en uns compartiments amb una estructura metàl·lica externa, amb la funció de rebre i distribuir l'energia elèctrica.</p>
+<p><br/></p>
+<p><center><img alt="110031" src="../img/110031.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left"> Indica el codi intern de la subestació.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110032" src="../img/110032.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-cel·les
+Nom taula DB: atmgis_11_cel·les_mt_25_kv
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: 'continua', color: '#434343', fillcolor: '#eaeaea', fillstyle: 'solid', labelby: 'mt25']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="004-rectificadors-900-kw">004 Rectificadors 900 kW</h3>
+<blockquote>
+<p><code>Identificador: 11004 | Codi: REC | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Rectificador de corrent elèctric. Dispositiu elèctric que converteix el corrent altern en corrent continu.</p>
+<p><br/></p>
+<p><center><img alt="110041" src="../img/110041.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="110042" src="../img/110042.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left"> Indica el codi intern de la subestació.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110043" src="../img/110043.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-rectificadors
+Nom taula DB: atmgis_11_rectificadors_900_kw
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: 'continua', color: '#434343', fillcolor: '#eaeaea', fillstyle: 'solid', labelby: 'r']
+    [symbol: 'armari.svg', angle: '90', size: '3', weight: '0.3', color: '#a02c41', fillcolor: '#966770']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="005-carregadors-i-bateries">005 Carregadors i bateries</h3>
+<blockquote>
+<p><code>Identificador: 11005 | Codi: RCT | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Acumuladors d'energia. Aparells acumuladors d'energia elèctrica que funcionen coma reservori.</p>
+<p><br/></p>
+<p><center><img alt="110051" src="../img/110051.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left"> Indica el codi intern de la subestació.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110052" src="../img/110052.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-carregador i bateries
+Nom taula DB: atmgis_11_carregadors_i_bateries
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    Simbologia no definida
+</code></pre>
+<p><br/><br/></p>
+<h3 id="006-quadre-bt">006 Quadre BT</h3>
+<blockquote>
+<p><code>Identificador: 11006 | Codi: QUB | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Quadre de baixa tensió. És el conjunt de mòduls que reben el circuit principal de BT del transformador i el distribueixen en diversos circuits individuals que alimenten diferents elements de la subestació.</p>
+<p><br/></p>
+<p><center><img alt="110061" src="../img/110061.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="110062" src="../img/110062.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left"> Indica el codi intern de la subestació.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110063" src="../img/110063.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-quadre bt
+Nom taula DB: atmgis_11_quadre_bt
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: 'continua', color: '#434343', fillcolor: '#eaeaea', fillstyle: 'solid', labelby: 'bt']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="007-quadre-de-control">007 Quadre de control</h3>
+<blockquote>
+<p><code>Identificador: 11007 | Codi: QUC | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Quadre de control. Quadre que conté els comandaments per al control de la subestació.</p>
+<p><br/></p>
+<p><center><img alt="110071" src="../img/110071.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="110072" src="../img/110072.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left"> Indica el codi intern de la subestació.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110073" src="../img/110073.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-quadre de control
+Nom taula DB: atmgis_11_quadre_de_control
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: 'continua', color: '#434343', fillcolor: '#eaeaea', fillstyle: 'solid', labelby: 'qc']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="008-quadre-de-seccionadors-750-vcc">008 Quadre de seccionadors 750 VCC</h3>
+<blockquote>
+<p><code>Identificador: 11008 | Codi: QUS | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Quadre de seccionadors. Quadre que conté el comandament per al control dels seccionadors de catenària.</p>
+<p><br/></p>
+<p><center><img alt="110081" src="../img/110081.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left"> Indica el codi intern de la subestació.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110082" src="../img/110082.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-quadre de seccionadors
+Nom taula DB: atmgis_11_quadre_de_seccionadors_750_vcc
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: 'continua', color: '#434343', fillcolor: '#eaeaea', fillstyle: 'solid', labelby: 'qs750']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="009-disjuntor-750-vcc">009 Disjuntor 750 VCC</h3>
+<blockquote>
+<p><code>Identificador: 11009 | Codi: DIS | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Disjuntors de la subestació Un disjuntor o interruptor automàtic és un dispositiu capaç d'interrompre o obrir un circuit elèctric quan la intensitat del corrent elèctric que hi circula excedeix d'un determinat valor o, en el cas que es produeixi un curtcircuit, amb l'objectiu de no causar danys a la instal·lació elèctrica.</p>
+<p><br/></p>
+<p><center><img alt="110091" src="../img/110091.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left"> Indica el codi intern de la subestació.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110092" src="../img/110092.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Subestacions-disjuntors
+Nom taula DB: atmgis_11_disjuntor_750_vcc
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: 'continua', color: '#434343', fillcolor: '#eaeaea', labelby: 'd750']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="010-saa">010 SAA</h3>
+<blockquote>
+<p><code>Identificador: 11010 | Codi: SAA | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Seccionador d'Aïllament Automàtic. Seccionador que permet aïllar una subestació de la xarxa de tracció per incidència o manteniment.</p>
+<p><br/></p>
+<p><center><img alt="110101" src="../img/110101.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_SUBESTACIO</td>
+<td align="left"> Indica el codi intern de la subestació.</td>
+<td align="left"> [String (20)]</td>
+</tr>
+<tr>
+<td>NOM_SUBESTACIO</td>
+<td align="left">Indica el nom complert de la subestació.</td>
+<td align="left">[String (30)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="110102" src="../img/110102.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: SAA
+Nom taula DB: atmgis_11_saa
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.3', dasharray: 'continua', color: '#434343', fillcolor: '#eaeaea', fillstyle: 'solid', labelby: 'saa']
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

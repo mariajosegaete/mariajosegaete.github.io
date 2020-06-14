@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>09 Multitubular - Model de Dades de la Infraestructura Tramviaria</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="..">Model de Dades de la Infraestructura Tramviaria</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obra Civil <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Domini_public/">01 Domini Public</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tracat/">02 Traçat</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Parades/">03 Parades</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Pavimentacio/">04 Pavimentació</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Reg/">05 Reg</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Drenatge/">06 Drenatge</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Enllumenat/">07 Enllumenat</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Tramviaris <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Catenaria/">08 Catenària</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">09 Multitubular</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Energia/">10 Energia</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Subestacions/">11 Subestacions</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../SAE/">12 SAE</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_ferroviaria/">13 Senyalització ferroviària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Semaforitzacio/">14 Semaforització</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Senyalitzacio_viaria/">15 Senyalització viària</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Videovigilancia/">16 Videovigilància</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Tallers_i_cotxeres/">17 Tallers i Cotxeres</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistemes Auxiliars <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../Mobiliari_urba/">18 Mobiliari urbà</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../Estructures_complementaries/">19 Estructures complementàries</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Catenaria/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../Energia/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#09-multitubular">09 Multitubular</a></li>
+            <li class="second-level"><a href="#001-pericons">001 Pericons</a></li>
+                
+            <li class="second-level"><a href="#002-prisma">002 Prisma</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="09-multitubular">09 Multitubular</h2>
+<p><br/></p>
+<blockquote>
+<p>Grup: Sistemes Tramviaris · Número elements: 2</p>
+</blockquote>
+<p><br/></p>
+<p>Conjunt de tubulars, continguts en un prisma de formigó enterrat o bé disposats en safates, que transcorre al llarg de la traça del tramvia i que contenen cablejat corresponent a diferents subsistemes tramviaris, tals com energia, enllumenat, telecomunicacions, semaforització i d'altres.</p>
+<p><br/></p>
+<h3 id="001-pericons">001 Pericons</h3>
+<blockquote>
+<p><code>Identificador: 09001 | Codi: ARQ | Geometria: POLÍGON</code></p>
+</blockquote>
+<p><br/></p>
+<p>Pericó de registre del prisma multitubular tramviari. Un pericó és una caixa d'obra o prefabricada utilitzada per rebre, enllaçar i distribuir canalitzacions o conductes subterranis. Solen estar enterrats i tenen una tapa a la part superior per a poder accedir-hi i procedir al seu registre o netejar el seu interior.</p>
+<p><br/></p>
+<p><center><img alt="090011" src="../img/090011.jpg" /></center></p>
+<p><br/>
+Foto de detall:
+<br/></p>
+<p><center><img alt="090012" src="../img/090012.jpg" /></center></p>
+<p><br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>DIMENSIONS</td>
+<td align="left">Indica l'amplada i la longitud dels Pericons del multitubular en mm.</td>
+<td align="left">[String (15)]</td>
+</tr>
+<tr>
+<td>CODI_ASBUILT</td>
+<td align="left">Codi provinent dels Asbuilts per identificar els elements.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>PROF_COTA_SUPERIOR</td>
+<td align="left">Indica la profunditat en la cota superior del pericó.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+<tr>
+<td>TIPUS</td>
+<td align="left">Indica el tipus de pericó de multitubular. Aquesta pot ser de tipus metàl·lica, formigó, o tapa. L'atribut ha de tenir un dels següents valors:<ul><li><strong>Formigo</strong>: Defineixen el tipus d'arqueta de Formigó. </li><li><strong>Metalica</strong>: Defineixen el tipus d'arqueta Metàl·lica. </li><li><strong>Tapa</strong>: Defineixen l'arqueta de tipus Tapa. </li></td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>MT</td>
+<td align="left">Indica si el pericó de multitubular allotja cablejat de MT (25 kV).</td>
+<td align="left">[Boolean]</td>
+</tr>
+<tr>
+<td>FEEDER</td>
+<td align="left">Indica si el pericó de multitubular allotja cablejat d’alimentació de catenària (750 V).</td>
+<td align="left"> [Boolean]</td>
+</tr>
+<tr>
+<td>PROF_SOLERA</td>
+<td align="left">Indica la profunditat a la base on s'assenta el prisma multitubular.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="090013" src="../img/090013.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Multitubular-Pericons
+Nom taula DB: atmgis_09_pericons
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.35', dasharray: 'continua', color: '#c53814', fillcolor: '#f39a84', fillstyle: 'solid']
+</code></pre>
+<p><br/><br/></p>
+<h3 id="002-prisma">002 Prisma</h3>
+<blockquote>
+<p><code>Identificador: 09002 | Codi: MUL | Geometria: LÍNIA</code></p>
+</blockquote>
+<p><br/></p>
+<p>Multitubular que allotja el cablejat de diferents subsistemes tramviaris. Canalitzacions o safates per on transcorren un conjunt de tubs corrugats plàstics que contenen cables associats als diferents subsistemes tramviaris (energia, comunicacions, enllumenat, ...) i, en ocasions, altres serveis (semaforització, ...).</p>
+<p><br/>
+<center><img alt="090021" src="../img/090021.jpg" /></center>
+<br/></p>
+<p><strong>Atributs</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th align="left">Tipus</th>
+<th align="left">Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XARXA</td>
+<td align="left">Indica a la xarxa a la qual pertany la infraestructura tramviària. Actualment Trambaix (TBX) o bé Trambesòs (TBS). En un futur es podran incloure altres xarxes encara no definides.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>CODI_ACTIU</td>
+<td align="left">Codi que identifica un element en el GIS de forma unívoca. Està format per 4 parts separades per un guió. Comença amb el prefix TRM, després el codi de l'element segons el model de dades, un numero de dos dígits que indica l'operador o creador i un número de 5 dígits que identifica l'element al GIS de forma única.</td>
+<td align="left">[String (20)]</td>
+</tr>
+<tr>
+<td>LONGITUD</td>
+<td align="left">Indica la longitud del prisma multitubular en metres.</td>
+<td align="left">[Real (3)]</td>
+</tr>
+<tr>
+<td>MATRIU</td>
+<td align="left">Indica les dimensions de la matriu que defineix les posicions dels tubs en la multitubular. Indicar amb format files x columnes, p.ex: 2x3</td>
+<td align="left">[String (15)]</td>
+</tr>
+<tr>
+<td>OCUPACIO</td>
+<td align="left">Indica quines posicions de la matriu estan ocupades indicant la mida (P-Petita o G-Gran), posició i tipus d'ocupació separats per espai. Cada nova ocupació es separa amb una coma. Els tubs no ocupats es consideraran buits (N). Per exemple: P 1 1 F, G 1 2 T, G 2 1 L</td>
+<td align="left">[String (3000)]</td>
+</tr>
+<tr>
+<td>MT</td>
+<td align="left">Indica si hi ha allotjament de cablejat de MT (25 kV).</td>
+<td align="left">[boolean]</td>
+</tr>
+<tr>
+<td>FEEDER</td>
+<td align="left">Indica si hi ha allotjament de cablejat d’alimentació de catenària (750 V).</td>
+<td align="left">[boolean]</td>
+</tr>
+<tr>
+<td>TIPUS</td>
+<td align="left">Defineix la distribució interna dels prismes. L'atribut ha de tenir un dels següents valors:<ul><li><strong>Formigó soterrada</strong>: Tipus de distribució </li><li><strong>Canaleta</strong>: Tipus de distribució </li><li><strong>Safata galeria</strong>: Tipus de distribució </li><li><strong>Safata vista</strong>: Tipus de distribució </li><li><strong>Tub corrugat soterrat</strong>: Tipus de distribució </li></td>
+<td align="left"> [String (80)]</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><strong>Representació GIS:</strong></p>
+<p><br/>
+<center><img alt="090022" src="../img/090022.jpg" /></center>
+<br/></p>
+<pre><code>Nom capa element: Multitubular-prisma
+Nom taula DB: atmgis_09_prisma
+Nom camp geometria DB: geom
+Representació gràfica:
+
+    [weight: '0.4', dasharray: '3 1 2 1 2', color: '#c53814']
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
